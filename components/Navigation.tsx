@@ -73,7 +73,18 @@ export function Navigation() {
             </a>
           ))}
           <a
-            href="#apply"
+            href="/login"
+            className={cn(
+              "text-[0.72rem] font-medium uppercase tracking-wider2 transition-colors duration-300",
+              solid
+                ? "text-ink/70 hover:text-ink"
+                : "text-paper/70 hover:text-paper",
+            )}
+          >
+            Sign In
+          </a>
+          <a
+            href="/signup"
             className={cn(
               "px-6 py-3 text-[0.72rem] font-medium uppercase tracking-wider2 transition-colors duration-300",
               solid
@@ -118,7 +129,14 @@ export function Navigation() {
             </a>
           ))}
           <a
-            href="#apply"
+            href="/login"
+            onClick={() => setOpen(false)}
+            className="border-b border-line-light py-5 font-serif text-2xl text-ink/60"
+          >
+            Sign In
+          </a>
+          <a
+            href="/signup"
             onClick={() => setOpen(false)}
             className="mt-6 bg-ink px-6 py-4 text-center text-[0.72rem] font-medium uppercase tracking-wider2 text-paper"
           >

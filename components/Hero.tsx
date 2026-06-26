@@ -42,7 +42,7 @@ export function Hero() {
             className="mt-12 flex flex-col gap-4 animate-fade-in-up sm:flex-row"
             style={{ animationDelay: "300ms" }}
           >
-            <Button href="#apply" variant="primary" inverted>
+            <Button href="/signup" variant="primary" inverted>
               Apply for the Collective
             </Button>
             <Button href="#vision" variant="outline" inverted>

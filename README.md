@@ -31,6 +31,27 @@ npm run build    # production build (type-checked)
 npm run start    # serve the production build
 ```
 
+The public marketing site runs with no configuration. The **member dashboard**
+(executive accounts + tracking) is powered by Supabase — see
+[`SETUP.md`](SETUP.md) for the five-minute setup (create a project, paste two
+env values, run [`supabase/schema.sql`](supabase/schema.sql)).
+
+## The member area (`/dashboard`)
+
+Authenticated executives get a private, brand-matched dashboard:
+
+- **Auth** — email/password sign-up & sign-in (Supabase Auth), with the private
+  area guarded by a Next.js proxy/middleware session check.
+- **The Five Scoreboards** — self-assessment of Business, Leadership, Character,
+  Generosity, and Spiritual vitality (0–100) with reflections; every save is a
+  new dated reading, preserving history and trend.
+- **Daily Rhythm** — Morning / Midday / Evening entries mirroring the daily app
+  loop from the marketing site.
+- **Overview** — a composite standing plus today's rhythm progress.
+
+Row-level security ensures each executive can only ever read or write their own
+data.
+
 ## Structure
 
 ```

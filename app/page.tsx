@@ -3,7 +3,6 @@ import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { Section, SectionHeader } from "@/components/Section";
 import { Eyebrow } from "@/components/Eyebrow";
-import { Button } from "@/components/Button";
 import { EditorialQuote } from "@/components/EditorialQuote";
 import { ScoreboardCard } from "@/components/ScoreboardCard";
 import { RhythmPanel } from "@/components/RhythmPanel";
@@ -397,9 +396,9 @@ export default function Home() {
         headline="Build What Outlives You"
         subheadline="For business leaders ready to pursue excellence, integrity, generosity, and spiritual vitality in one integrated life."
         primaryLabel="Apply for the Collective"
-        primaryHref="#apply"
-        secondaryLabel="Request an Invitation"
-        secondaryHref="#apply"
+        primaryHref="/signup"
+        secondaryLabel="Member Sign In"
+        secondaryHref="/login"
       />
 
       <Footer />
