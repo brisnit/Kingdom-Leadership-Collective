@@ -72,13 +72,21 @@ export function Navigation() {
               {link.label}
             </a>
           ))}
+          {/* Thin divider separating wayfinding from account actions */}
+          <span
+            aria-hidden
+            className={cn(
+              "h-5 w-px",
+              solid ? "bg-ink/20" : "bg-paper/25",
+            )}
+          />
           <a
             href="/login"
             className={cn(
-              "text-[0.72rem] font-medium uppercase tracking-wider2 transition-colors duration-300",
+              "border px-6 py-3 text-[0.72rem] font-medium uppercase tracking-wider2 transition-colors duration-300",
               solid
-                ? "text-ink/70 hover:text-ink"
-                : "text-paper/70 hover:text-paper",
+                ? "border-ink/30 text-ink hover:bg-ink hover:text-paper"
+                : "border-paper/50 text-paper hover:bg-paper hover:text-ink",
             )}
           >
             Sign In
@@ -89,7 +97,7 @@ export function Navigation() {
               "px-6 py-3 text-[0.72rem] font-medium uppercase tracking-wider2 transition-colors duration-300",
               solid
                 ? "bg-ink text-paper hover:bg-ink-soft"
-                : "border border-paper/50 text-paper hover:bg-paper hover:text-ink",
+                : "bg-paper text-ink hover:bg-paper/85",
             )}
           >
             Apply
