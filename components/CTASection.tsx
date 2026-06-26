@@ -69,7 +69,15 @@ export function CTASection({
       className="relative overflow-hidden bg-ink text-center text-paper"
     >
       <div className="absolute inset-0">
-        <EditorialImage src={bgImage} alt={bgAlt} fill sizes="100vw" overlay="strong" />
+        <EditorialImage
+          src={bgImage}
+          alt={bgAlt}
+          fill
+          parallax
+          strength={55}
+          sizes="100vw"
+          overlay="strong"
+        />
       </div>
       <div className="relative z-10 mx-auto w-full max-w-editorial px-6 py-28 md:px-10 md:py-40 lg:px-14">
         {content}

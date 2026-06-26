@@ -61,6 +61,7 @@ export default function Home() {
 
         <Reveal className="mt-16 md:mt-20">
           <EditorialImage
+            parallax
             src="/images/vision-figure.jpg"
             alt="A lone figure standing before a vast, mist-wrapped river valley"
             ratio="aspect-[16/9] md:aspect-[21/9]"
@@ -123,6 +124,7 @@ export default function Home() {
         <Reveal className="mt-14">
           <EditorialImage
             dark
+            parallax
             src="/images/summit-valley.jpg"
             alt="A grand valley framed by granite cliffs and a still river"
             ratio="aspect-[16/9] md:aspect-[24/9]"
@@ -202,6 +204,7 @@ export default function Home() {
             </p>
             <EditorialImage
               dark
+              parallax
               src="/images/generosity-horizon.jpg"
               alt="An expansive fjord opening between towering cliffs toward the horizon"
               ratio="aspect-[5/4]"
@@ -400,6 +403,7 @@ export default function Home() {
             </h2>
             <EditorialImage
               dark
+              parallax
               src="/images/pastoral-coast.jpg"
               alt="A quiet shoreline beneath a vast, brooding sky"
               ratio="aspect-[4/3]"

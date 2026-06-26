@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { useParallax } from "@/lib/useParallax";
 
 interface EditorialImageProps {
   src: string;
@@ -20,6 +23,10 @@ interface EditorialImageProps {
   caption?: string;
   /** Flip border + caption colors for placement on black sections. */
   dark?: boolean;
+  /** Enable subtle scroll parallax on the image. */
+  parallax?: boolean;
+  /** Parallax travel in px (larger = more movement). */
+  strength?: number;
 }
 
 const OVERLAY: Record<NonNullable<EditorialImageProps["overlay"]>, string> = {
@@ -31,8 +38,9 @@ const OVERLAY: Record<NonNullable<EditorialImageProps["overlay"]>, string> = {
 
 /**
  * The single image primitive for the site. Color photography framed with sharp
- * corners, a hairline border, and an optional flat dark overlay. A quiet zoom
- * on hover keeps interactions premium without animation noise.
+ * corners, a hairline border, an optional flat dark overlay, and optional
+ * subtle scroll parallax. A quiet zoom on hover keeps non-parallax frames
+ * premium without animation noise.
  */
 export function EditorialImage({
   src,
@@ -45,21 +53,46 @@ export function EditorialImage({
   overlay = "none",
   caption,
   dark = false,
+  parallax = false,
+  strength,
 }: EditorialImageProps) {
+  // Defaults tuned so parallax travel stays within the 11% scale headroom
+  // (above) while the image is on screen — no edge ever shows in view.
+  const layerRef = useParallax<HTMLDivElement>(
+    strength ?? (fill ? 55 : 24),
+    parallax,
+  );
+
+  const overlayNode =
+    overlay !== "none" ? (
+      <div aria-hidden className={cn("absolute inset-0", OVERLAY[overlay])} />
+    ) : null;
+
+  const imageLayer = (
+    <div
+      ref={layerRef}
+      className={cn("absolute inset-0", parallax && "parallax-layer")}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={sizes}
+        priority={priority}
+        className={cn(
+          "object-cover",
+          !parallax &&
+            "transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]",
+        )}
+      />
+    </div>
+  );
+
   if (fill) {
     return (
       <>
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          sizes={sizes}
-          priority={priority}
-          className="object-cover"
-        />
-        {overlay !== "none" && (
-          <div aria-hidden className={cn("absolute inset-0", OVERLAY[overlay])} />
-        )}
+        {imageLayer}
+        {overlayNode}
       </>
     );
   }
@@ -73,17 +106,8 @@ export function EditorialImage({
           ratio,
         )}
       >
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          sizes={sizes}
-          priority={priority}
-          className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
-        />
-        {overlay !== "none" && (
-          <div aria-hidden className={cn("absolute inset-0", OVERLAY[overlay])} />
-        )}
+        {imageLayer}
+        {overlayNode}
       </div>
       {caption && (
         <figcaption

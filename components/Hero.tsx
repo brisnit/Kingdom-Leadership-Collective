@@ -20,6 +20,8 @@ export function Hero() {
           alt="Sunrise breaking over a mountain wilderness"
           fill
           priority
+          parallax
+          strength={55}
           sizes="100vw"
           overlay="strong"
         />
@@ -66,12 +68,15 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Quiet scroll affordance */}
-      <div className="absolute inset-x-0 bottom-8 z-10 mx-auto flex max-w-editorial items-center justify-between px-6 md:px-10 lg:px-14">
-        <span className="text-[0.65rem] uppercase tracking-micro text-paper/40">
-          Scroll
-        </span>
-        <span className="text-[0.65rem] uppercase tracking-micro text-paper/40">
+      {/* Quiet scroll affordance with animated cue */}
+      <div className="absolute inset-x-0 bottom-8 z-10 mx-auto flex max-w-editorial items-end justify-between px-6 md:px-10 lg:px-14">
+        <div className="flex items-center gap-4">
+          <span aria-hidden className="scroll-cue" />
+          <span className="text-[0.65rem] uppercase tracking-micro text-paper/45">
+            Scroll
+          </span>
+        </div>
+        <span className="text-[0.65rem] uppercase tracking-micro text-paper/45">
           By Invitation &amp; Application
         </span>
       </div>

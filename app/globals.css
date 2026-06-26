@@ -60,11 +60,57 @@
     transform: translateY(0);
   }
 
+  /* Parallax moving layer — scaled slightly so the translate never reveals an
+     edge. The --py variable is driven by useParallax. */
+  .parallax-layer {
+    transform: translate3d(0, var(--py, 0px), 0) scale(1.22);
+    will-change: transform;
+  }
+
+  /* Animated scroll cue: a hairline that glides downward and fades. */
+  .scroll-cue {
+    position: relative;
+    display: block;
+    height: 3.5rem;
+    width: 1px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.15);
+  }
+  .scroll-cue::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 40%;
+    background: rgba(255, 255, 255, 0.9);
+    animation: scroll-cue 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  }
+
+  @keyframes scroll-cue {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    35% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(250%);
+      opacity: 0;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .reveal {
       opacity: 1;
       transform: none;
       transition: none;
+    }
+    .parallax-layer {
+      transform: none;
+    }
+    .scroll-cue::after {
+      animation: none;
     }
     html {
       scroll-behavior: auto;
