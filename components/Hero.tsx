@@ -1,9 +1,11 @@
 import { Eyebrow } from "./Eyebrow";
 import { Button } from "./Button";
+import { EditorialImage } from "./EditorialImage";
 
 /**
- * Near full-screen black hero with editorial type and an abstract
- * monochrome retreat visual built entirely in CSS (no stock imagery).
+ * Near full-screen hero: a cinematic color retreat photograph beneath a flat
+ * dark overlay, with editorial typography and a faint hairline grid for
+ * structure. The interface stays monochrome; the photography brings the color.
  */
 export function Hero() {
   return (
@@ -11,7 +13,19 @@ export function Hero() {
       id="top"
       className="relative flex min-h-[100svh] items-center overflow-hidden bg-ink text-paper"
     >
-      {/* Abstract monochrome visual field — layered hairlines + soft vignette. */}
+      {/* Full-bleed photograph + flat dark tint for legibility */}
+      <div className="absolute inset-0">
+        <EditorialImage
+          src="/images/hero-vista.jpg"
+          alt="Sunrise breaking over a mountain wilderness"
+          fill
+          priority
+          sizes="100vw"
+          overlay="strong"
+        />
+      </div>
+
+      {/* Editorial hairlines layered over the image */}
       <AbstractVisual />
 
       <div className="relative z-10 mx-auto w-full max-w-editorial px-6 pb-16 pt-32 md:px-10 lg:px-14">
@@ -66,43 +80,25 @@ export function Hero() {
 }
 
 /**
- * Purely decorative CSS visual — strictly flat, no gradients.
- * An editorial grid of hairlines and a faint concentric rule motif that
- * evokes a horizon over a retreat without any imagery or color.
+ * Decorative hairline structure layered over the hero photograph — strictly
+ * flat, no gradients. Vertical rules aligned to the content measure keep the
+ * editorial grid legible without competing with the image.
  */
 function AbstractVisual() {
   return (
-    <div aria-hidden className="pointer-events-none absolute inset-0">
+    <div aria-hidden className="pointer-events-none absolute inset-0 z-[1]">
       {/* Vertical editorial grid lines, aligned to the content measure */}
       <div className="absolute inset-0 mx-auto max-w-editorial px-6 md:px-10 lg:px-14">
         <div className="relative h-full">
-          {[0, 25, 50, 75, 100].map((pct) => (
+          {[0, 50, 100].map((pct) => (
             <span
               key={pct}
-              className="absolute top-0 h-full w-px bg-paper/[0.06]"
+              className="absolute top-0 h-full w-px bg-paper/[0.08]"
               style={{ left: `${pct}%` }}
             />
           ))}
         </div>
       </div>
-
-      {/* Concentric square rules — quiet, flat, suggesting light over a horizon */}
-      <div className="absolute right-[-8%] top-1/2 hidden -translate-y-1/2 lg:block">
-        {[640, 500, 360, 220].map((size, i) => (
-          <span
-            key={size}
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border border-paper"
-            style={{
-              width: size,
-              height: size,
-              opacity: 0.05 + i * 0.015,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* A single horizon rule */}
-      <div className="absolute inset-x-0 bottom-[20%] h-px bg-paper/10" />
     </div>
   );
 }

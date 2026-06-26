@@ -11,6 +11,7 @@ import { ResourceGrid } from "@/components/ResourceGrid";
 import { MentorQuestion } from "@/components/MentorQuestion";
 import { DashboardMetric } from "@/components/DashboardMetric";
 import { CTASection } from "@/components/CTASection";
+import { EditorialImage } from "@/components/EditorialImage";
 import { Reveal } from "@/components/Reveal";
 import {
   SCOREBOARDS,
@@ -57,6 +58,16 @@ export default function Home() {
             </p>
           </Reveal>
         </div>
+
+        <Reveal className="mt-16 md:mt-20">
+          <EditorialImage
+            src="/images/vision-figure.jpg"
+            alt="A lone figure standing before a vast, mist-wrapped river valley"
+            ratio="aspect-[16/9] md:aspect-[21/9]"
+            sizes="(max-width: 768px) 100vw, 1200px"
+            caption="The depth of the leader, the breadth of the impact"
+          />
+        </Reveal>
 
         <Reveal className="mt-24 md:mt-32">
           <EditorialQuote cite="The Heart of the Collective">
@@ -109,7 +120,18 @@ export default function Home() {
           </SectionHeader>
         </Reveal>
 
-        <div className="mt-16 grid gap-px bg-line-dark lg:grid-cols-3">
+        <Reveal className="mt-14">
+          <EditorialImage
+            dark
+            src="/images/summit-valley.jpg"
+            alt="A grand valley framed by granite cliffs and a still river"
+            ratio="aspect-[16/9] md:aspect-[24/9]"
+            sizes="(max-width: 768px) 100vw, 1200px"
+            caption="The Kingdom Summit — Pebble Beach · Scottsdale · Coeur d'Alene · Sea Island · Palm Desert"
+          />
+        </Reveal>
+
+        <div className="mt-12 grid gap-px bg-line-dark lg:grid-cols-3">
           {RHYTHM.map((panel, i) => (
             <Reveal key={panel.title} delay={i * 110}>
               <RhythmPanel
@@ -178,6 +200,15 @@ export default function Home() {
               don&apos;t treat it as an afterthought to wealth — we build it into
               the architecture of a leader&apos;s life, family, and legacy.
             </p>
+            <EditorialImage
+              dark
+              src="/images/generosity-horizon.jpg"
+              alt="An expansive fjord opening between towering cliffs toward the horizon"
+              ratio="aspect-[5/4]"
+              sizes="(max-width: 1024px) 100vw, 560px"
+              caption="Open hands. Open horizon."
+              className="mt-10"
+            />
           </Reveal>
 
           <div className="grid grid-cols-1 gap-px self-start bg-line-dark sm:grid-cols-2">
@@ -367,6 +398,14 @@ export default function Home() {
             <h2 className="mt-8 font-serif text-4xl leading-[1.1] tracking-tight text-balance sm:text-5xl">
               Strategy Courses Are Common. Trusted Shepherding Is Rare.
             </h2>
+            <EditorialImage
+              dark
+              src="/images/pastoral-coast.jpg"
+              alt="A quiet shoreline beneath a vast, brooding sky"
+              ratio="aspect-[4/3]"
+              sizes="(max-width: 1024px) 100vw, 480px"
+              className="mt-10"
+            />
           </Reveal>
 
           <Reveal delay={120} className="max-w-2xl lg:pt-2">
@@ -399,6 +438,8 @@ export default function Home() {
         primaryHref="/signup"
         secondaryLabel="Member Sign In"
         secondaryHref="/login"
+        bgImage="/images/cta-desert.jpg"
+        bgAlt="A desert canyon glowing under the last light of day"
       />
 
       <Footer />
