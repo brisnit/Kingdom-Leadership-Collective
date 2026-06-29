@@ -203,12 +203,11 @@ export default function Home() {
             </p>
             <EditorialImage
               dark
-              parallax
-              src="/images/generosity-horizon.jpg"
-              alt="An expansive fjord opening between towering cliffs toward the horizon"
+              src="/images/generosity-meeting.jpg"
+              alt="Executives in conversation around a boardroom table at sunset above the city"
               ratio="aspect-[5/4]"
               sizes="(max-width: 1024px) 100vw, 560px"
-              caption="Open hands. Open horizon."
+              caption="Built into the architecture of a leader's life"
               className="mt-10"
             />
           </Reveal>
