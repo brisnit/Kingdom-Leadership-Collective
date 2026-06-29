@@ -124,9 +124,9 @@ export default function Home() {
           <EditorialImage
             dark
             parallax
-            src="/images/summit-valley.jpg"
-            alt="A grand valley framed by granite cliffs and a still river"
-            ratio="aspect-[16/9] md:aspect-[24/9]"
+            src="/images/summit-brotherhood.jpg"
+            alt="A group of men on a river raft at sunset, mountains rising ahead"
+            ratio="aspect-[16/10] md:aspect-[16/9]"
             sizes="(max-width: 768px) 100vw, 1200px"
             caption="The Kingdom Summit — Pebble Beach · Scottsdale · Coeur d'Alene · Sea Island · Palm Desert"
           />
