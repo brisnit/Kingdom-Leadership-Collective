@@ -62,8 +62,8 @@ export default function Home() {
         <Reveal className="mt-16 md:mt-20">
           <EditorialImage
             src="/images/vision-family.jpg"
-            alt="A father, mother, and two children walking hand in hand toward a golden sunset"
-            ratio="aspect-[16/9]"
+            alt="A family gathered close, reading scripture together by warm lamplight"
+            ratio="aspect-[16/10]"
             sizes="(max-width: 768px) 100vw, 1200px"
             caption="A blessing to their families, their employees, and the world"
           />
