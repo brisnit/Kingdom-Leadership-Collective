@@ -189,7 +189,7 @@ export default function Home() {
       </Section>
 
       {/* SECTION 6 — SIGNATURE GENEROSITY TRACK */}
-      <Section id="generosity" className="bg-ink text-paper">
+      <Section id="generosity" dark>
         <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:gap-20">
           <Reveal>
             <Eyebrow inverted>The Signature Distinctive</Eyebrow>
