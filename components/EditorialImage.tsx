@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useParallax } from "@/lib/useParallax";
@@ -63,22 +64,48 @@ export function EditorialImage({
     parallax,
   );
 
+  // Fade each image in as it lazily loads. The effect guards against
+  // already-cached images (whose onLoad may fire before hydration).
+  const imgRef = useRef<HTMLImageElement | null>(null);
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => {
+    if (imgRef.current?.complete) setLoaded(true);
+  }, []);
+
   const overlayNode =
     overlay !== "none" ? (
       <div aria-hidden className={cn("absolute inset-0", OVERLAY[overlay])} />
     ) : null;
 
+  // A flat tone shown beneath the image until it loads.
+  const placeholder = (
+    <div
+      aria-hidden
+      className={cn(
+        "absolute inset-0 transition-opacity duration-700",
+        dark ? "bg-ink-soft" : "bg-paper-soft",
+        loaded ? "opacity-0" : "opacity-100",
+      )}
+    />
+  );
+
   const imageLayer = (
     <div
       ref={layerRef}
-      className={cn("absolute inset-0", parallax && "parallax-layer")}
+      className={cn(
+        "absolute inset-0 transition-opacity duration-700 ease-out",
+        loaded ? "opacity-100" : "opacity-0",
+        parallax && "parallax-layer",
+      )}
     >
       <Image
+        ref={imgRef}
         src={src}
         alt={alt}
         fill
         sizes={sizes}
         priority={priority}
+        onLoad={() => setLoaded(true)}
         className={cn(
           "object-cover",
           !parallax &&
@@ -91,6 +118,7 @@ export function EditorialImage({
   if (fill) {
     return (
       <>
+        {placeholder}
         {imageLayer}
         {overlayNode}
       </>
@@ -106,6 +134,7 @@ export function EditorialImage({
           ratio,
         )}
       >
+        {placeholder}
         {imageLayer}
         {overlayNode}
       </div>

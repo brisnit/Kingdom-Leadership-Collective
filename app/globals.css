@@ -112,6 +112,9 @@
     .scroll-cue::after {
       animation: none;
     }
+    .metric-bar {
+      transition: none;
+    }
     html {
       scroll-behavior: auto;
     }
