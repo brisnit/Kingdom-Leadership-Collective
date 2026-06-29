@@ -32,7 +32,7 @@ export function Section({
         dark && "bg-ink text-paper",
         soft && !dark && "bg-paper-soft text-ink",
         !dark && !soft && "bg-paper text-ink",
-        !flush && "py-24 md:py-32 lg:py-40",
+        !flush && "py-16 sm:py-20 md:py-32 lg:py-40",
         className,
       )}
     >
