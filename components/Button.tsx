@@ -24,7 +24,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const base =
-    "group inline-flex items-center justify-center gap-3 px-9 py-4 text-[0.72rem] font-medium uppercase tracking-wider2 transition-colors duration-300 ease-out select-none";
+    "group inline-flex items-center justify-center gap-3 whitespace-nowrap px-9 py-4 text-[0.72rem] font-medium uppercase tracking-wider2 transition-colors duration-300 ease-out select-none";
 
   const variants: Record<Variant, string> = {
     primary: inverted
