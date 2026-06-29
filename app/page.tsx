@@ -61,12 +61,11 @@ export default function Home() {
 
         <Reveal className="mt-16 md:mt-20">
           <EditorialImage
-            parallax
-            src="/images/vision-figure.jpg"
-            alt="A lone figure standing before a vast, mist-wrapped river valley"
-            ratio="aspect-[16/9] md:aspect-[21/9]"
+            src="/images/vision-family.jpg"
+            alt="A father, mother, and two children walking hand in hand toward a golden sunset"
+            ratio="aspect-[16/9]"
             sizes="(max-width: 768px) 100vw, 1200px"
-            caption="The depth of the leader, the breadth of the impact"
+            caption="A blessing to their families, their employees, and the world"
           />
         </Reveal>
 
