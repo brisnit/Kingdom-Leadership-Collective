@@ -401,11 +401,11 @@ export default function Home() {
             </h2>
             <EditorialImage
               dark
-              parallax
-              src="/images/pastoral-coast.jpg"
-              alt="A quiet shoreline beneath a vast, brooding sky"
-              ratio="aspect-[4/3]"
+              src="/images/pastoral-group.jpg"
+              alt="A small group of men in deep conversation around an open Bible in a warm study"
+              ratio="aspect-[3/2]"
               sizes="(max-width: 1024px) 100vw, 480px"
+              caption="A trusted shepherd in the room — not just a curriculum"
               className="mt-10"
             />
           </Reveal>

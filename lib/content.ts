@@ -86,6 +86,7 @@ export const APP_PANELS = [
     items: [
       { label: "Leadership Quote", body: "A line worth pausing on at the desk." },
       { label: "Business Challenge", body: "A practical prompt to apply before evening." },
+      { label: "Prayer", body: "A brief pause to invite God into the afternoon." },
     ],
   },
   {
