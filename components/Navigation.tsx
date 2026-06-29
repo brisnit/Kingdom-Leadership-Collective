@@ -5,10 +5,13 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const LINKS = [
-  { label: "Vision", href: "#vision" },
-  { label: "Rhythm", href: "#rhythm" },
-  { label: "Tracks", href: "#tracks" },
-  { label: "Resources", href: "#resources" },
+  // Root-relative hashes so in-page links also work from other routes
+  // (e.g. /leadership), resolving back to the homepage section.
+  { label: "Vision", href: "/#vision" },
+  { label: "Rhythm", href: "/#rhythm" },
+  { label: "Tracks", href: "/#tracks" },
+  { label: "Resources", href: "/#resources" },
+  { label: "Leadership", href: "/leadership" },
 ];
 
 /**
@@ -47,7 +50,7 @@ export function Navigation() {
     >
       <nav className="mx-auto flex h-20 max-w-editorial items-center justify-between px-6 md:px-10 lg:px-14">
         <a
-          href="#top"
+          href="/"
           className={cn(
             "font-serif text-lg leading-none tracking-tight transition-colors duration-500 sm:text-xl",
             solid ? "text-ink" : "text-paper",
@@ -57,7 +60,7 @@ export function Navigation() {
           <span className="hidden sm:inline"> Collective</span>
         </a>
 
-        <div className="hidden items-center gap-10 md:flex">
+        <div className="hidden items-center gap-6 md:flex lg:gap-9">
           {LINKS.map((link) => (
             <a
               key={link.href}

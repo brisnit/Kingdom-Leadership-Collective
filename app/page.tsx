@@ -472,7 +472,7 @@ function AppPanel({ time, index, items }: AppPanelProps) {
       </div>
       <div className="flex flex-1 flex-col gap-px bg-paper/15">
         {items.map((item) => (
-          <div key={item.label} className="bg-ink px-6 py-7">
+          <div key={item.label} className="flex flex-1 flex-col justify-center bg-ink px-6 py-7">
             <span className="text-[0.6rem] font-medium uppercase tracking-wider2 text-paper/45">
               {item.label}
             </span>

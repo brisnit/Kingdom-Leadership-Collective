@@ -1,10 +1,11 @@
 import { Eyebrow } from "./Eyebrow";
 
 const NAV = [
-  { label: "Vision", href: "#vision" },
-  { label: "Rhythm", href: "#rhythm" },
-  { label: "Tracks", href: "#tracks" },
-  { label: "Apply", href: "#apply" },
+  { label: "Vision", href: "/#vision" },
+  { label: "Rhythm", href: "/#rhythm" },
+  { label: "Tracks", href: "/#tracks" },
+  { label: "Leadership", href: "/leadership" },
+  { label: "Apply", href: "/#apply" },
 ];
 
 export function Footer() {
