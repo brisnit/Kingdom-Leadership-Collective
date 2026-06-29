@@ -440,8 +440,8 @@ export default function Home() {
         primaryHref="/signup"
         secondaryLabel="Member Sign In"
         secondaryHref="/login"
-        bgImage="/images/cta-desert.jpg"
-        bgAlt="A desert canyon glowing under the last light of day"
+        bgImage="/images/cta-city.jpg"
+        bgAlt="An executive standing at a high-rise window overlooking the city skyline at night"
       />
 
       <Footer />
