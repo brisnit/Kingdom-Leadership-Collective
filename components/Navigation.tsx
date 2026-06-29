@@ -60,13 +60,13 @@ export function Navigation() {
           <span className="hidden sm:inline"> Collective</span>
         </a>
 
-        <div className="hidden items-center gap-6 md:flex lg:gap-9">
+        <div className="hidden items-center gap-6 lg:flex lg:gap-9">
           {LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
               className={cn(
-                "text-[0.72rem] font-medium uppercase tracking-wider2 transition-colors duration-300",
+                "whitespace-nowrap text-[0.72rem] font-medium uppercase tracking-wider2 transition-colors duration-300",
                 solid
                   ? "text-ink/70 hover:text-ink"
                   : "text-paper/70 hover:text-paper",
@@ -79,14 +79,14 @@ export function Navigation() {
           <span
             aria-hidden
             className={cn(
-              "h-5 w-px",
+              "h-5 w-px shrink-0",
               solid ? "bg-ink/20" : "bg-paper/25",
             )}
           />
           <a
             href="/login"
             className={cn(
-              "border px-6 py-3 text-[0.72rem] font-medium uppercase tracking-wider2 transition-colors duration-300",
+              "whitespace-nowrap border px-6 py-3 text-[0.72rem] font-medium uppercase tracking-wider2 transition-colors duration-300",
               solid
                 ? "border-ink/30 text-ink hover:bg-ink hover:text-paper"
                 : "border-paper/50 text-paper hover:bg-paper hover:text-ink",
@@ -97,7 +97,7 @@ export function Navigation() {
           <a
             href="/signup"
             className={cn(
-              "px-6 py-3 text-[0.72rem] font-medium uppercase tracking-wider2 transition-colors duration-300",
+              "whitespace-nowrap px-6 py-3 text-[0.72rem] font-medium uppercase tracking-wider2 transition-colors duration-300",
               solid
                 ? "bg-ink text-paper hover:bg-ink-soft"
                 : "bg-paper text-ink hover:bg-paper/85",
@@ -113,7 +113,7 @@ export function Navigation() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           className={cn(
-            "md:hidden",
+            "lg:hidden",
             solid ? "text-ink" : "text-paper",
           )}
         >
@@ -124,7 +124,7 @@ export function Navigation() {
       {/* Mobile sheet */}
       <div
         className={cn(
-          "overflow-hidden border-line-light bg-paper transition-[max-height] duration-500 ease-out md:hidden",
+          "overflow-hidden border-line-light bg-paper transition-[max-height] duration-500 ease-out lg:hidden",
           open ? "max-h-[80vh] border-t" : "max-h-0",
         )}
       >
