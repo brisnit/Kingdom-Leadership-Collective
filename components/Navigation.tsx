@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -51,13 +52,33 @@ export function Navigation() {
       <nav className="mx-auto flex h-20 max-w-editorial items-center justify-between px-6 md:px-10 lg:px-14">
         <a
           href="/"
-          className={cn(
-            "font-serif text-lg leading-none tracking-tight transition-colors duration-500 sm:text-xl",
-            solid ? "text-ink" : "text-paper",
-          )}
+          aria-label="Kingdom Leadership Collective — home"
+          className="flex items-center"
         >
-          Kingdom Leadership
-          <span className="hidden sm:inline"> Collective</span>
+          {/* Full horizontal logo: desktop, over the dark hero only */}
+          <Image
+            src="/images/klc-logo.png"
+            alt="Kingdom Leadership Collective"
+            width={763}
+            height={200}
+            priority
+            className={cn(
+              "hidden h-11 w-auto",
+              !solid && "md:block",
+            )}
+          />
+          {/* Shield mark: mobile always, and desktop once the bar turns white */}
+          <Image
+            src="/images/klc-shield.png"
+            alt="Kingdom Leadership Collective"
+            width={184}
+            height={240}
+            priority
+            className={cn(
+              "h-10 w-auto",
+              !solid && "md:hidden",
+            )}
+          />
         </a>
 
         <div className="hidden items-center gap-6 lg:flex lg:gap-9">

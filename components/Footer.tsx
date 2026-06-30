@@ -1,4 +1,4 @@
-import { Eyebrow } from "./Eyebrow";
+import Image from "next/image";
 
 const NAV = [
   { label: "Vision", href: "/#vision" },
@@ -14,7 +14,13 @@ export function Footer() {
       <div className="mx-auto max-w-editorial px-6 py-20 md:px-10 md:py-24 lg:px-14">
         <div className="grid gap-16 md:grid-cols-[1.5fr_1fr]">
           <div className="max-w-md">
-            <Eyebrow inverted>Kingdom Leadership Collective</Eyebrow>
+            <Image
+              src="/images/klc-logo.png"
+              alt="Kingdom Leadership Collective"
+              width={763}
+              height={200}
+              className="h-12 w-auto md:h-14"
+            />
             <p className="mt-8 font-serif text-3xl leading-tight md:text-4xl">
               A mentorship community for business leaders.
             </p>
