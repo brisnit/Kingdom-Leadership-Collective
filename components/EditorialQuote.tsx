@@ -19,10 +19,7 @@ export function EditorialQuote({
 }: EditorialQuoteProps) {
   return (
     <figure className={cn("mx-auto max-w-4xl text-center", className)}>
-      <div
-        aria-hidden
-        className={cn("mx-auto mb-12 h-px w-16", dark ? "bg-paper/40" : "bg-ink/30")}
-      />
+      <div aria-hidden className="mx-auto mb-12 h-px w-16 bg-gold" />
       <blockquote>
         <p className="font-serif text-3xl font-normal leading-[1.3] tracking-tight text-balance sm:text-4xl md:text-[2.9rem] md:leading-[1.28]">
           {children}
@@ -38,10 +35,7 @@ export function EditorialQuote({
           {cite}
         </figcaption>
       )}
-      <div
-        aria-hidden
-        className={cn("mx-auto mt-12 h-px w-16", dark ? "bg-paper/40" : "bg-ink/30")}
-      />
+      <div aria-hidden className="mx-auto mt-12 h-px w-16 bg-gold" />
     </figure>
   );
 }

@@ -68,14 +68,14 @@ export function DashboardMetric({
         </span>
         <span className="font-serif text-3xl leading-none text-paper tabular-nums">
           {display}
-          <span className="ml-0.5 align-top text-base text-paper/45">%</span>
+          <span className="ml-0.5 align-top text-base text-gold">%</span>
         </span>
       </div>
 
       <div className="mt-10">
         <div className="h-px w-full bg-paper/15">
           <div
-            className="metric-bar h-px bg-paper transition-[width] duration-[1100ms] ease-[cubic-bezier(0.33,1,0.68,1)]"
+            className="metric-bar h-px bg-gold transition-[width] duration-[1100ms] ease-[cubic-bezier(0.33,1,0.68,1)]"
             style={{ width: `${inView ? clamped : 0}%` }}
             role="progressbar"
             aria-valuenow={clamped}

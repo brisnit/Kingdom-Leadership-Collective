@@ -6,7 +6,7 @@ const config: Config = {
     "./components/**/*.{ts,tsx}",
   ],
   theme: {
-    // Strict monochrome palette — black and white only.
+    // Monochrome palette with a single restrained accent: the crest's gold.
     colors: {
       transparent: "transparent",
       current: "currentColor",
@@ -26,6 +26,13 @@ const config: Config = {
       line: {
         light: "#E4E2DD",
         dark: "#2A2A2A",
+      },
+      // Sampled from the KLC crest trim. Used only as a thin, deliberate
+      // accent — never as a fill.
+      gold: {
+        DEFAULT: "#B89A5E",
+        deep: "#977C46",
+        soft: "#CDB88A",
       },
     },
     extend: {

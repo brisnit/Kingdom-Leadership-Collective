@@ -20,10 +20,7 @@ export function Eyebrow({ children, className, inverted = false }: EyebrowProps)
         className,
       )}
     >
-      <span
-        aria-hidden
-        className={cn("h-px w-8", inverted ? "bg-paper/50" : "bg-ink/40")}
-      />
+      <span aria-hidden className="h-px w-8 bg-gold" />
       {children}
     </span>
   );
