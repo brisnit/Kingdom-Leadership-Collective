@@ -55,7 +55,7 @@ export function Navigation() {
           aria-label="Kingdom Leadership Collective — home"
           className="flex items-center"
         >
-          {/* Full horizontal logo: desktop, over the dark hero only */}
+          {/* Desktop over the dark hero: white-wordmark logo */}
           <Image
             src="/images/klc-logo.png"
             alt="Kingdom Leadership Collective"
@@ -63,21 +63,30 @@ export function Navigation() {
             height={200}
             priority
             className={cn(
-              "hidden h-11 w-auto",
+              "hidden h-[3.3rem] w-auto",
               !solid && "md:block",
             )}
           />
-          {/* Shield mark: mobile always, and desktop once the bar turns white */}
+          {/* Desktop once the bar turns white: dark-wordmark logo */}
+          <Image
+            src="/images/klc-logo-ink.png"
+            alt="Kingdom Leadership Collective"
+            width={763}
+            height={200}
+            priority
+            className={cn(
+              "hidden h-[3.3rem] w-auto",
+              solid && "md:block",
+            )}
+          />
+          {/* Mobile (both states): the shield mark */}
           <Image
             src="/images/klc-shield.png"
             alt="Kingdom Leadership Collective"
             width={184}
             height={240}
             priority
-            className={cn(
-              "h-10 w-auto",
-              !solid && "md:hidden",
-            )}
+            className="h-12 w-auto md:hidden"
           />
         </a>
 
