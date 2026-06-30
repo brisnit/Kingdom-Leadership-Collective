@@ -17,7 +17,7 @@ export function Footer() {
             <Image
               src="/images/klc-logo.png"
               alt="Kingdom Leadership Collective"
-              width={763}
+              width={820}
               height={200}
               className="h-12 w-auto md:h-14"
             />

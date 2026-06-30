@@ -59,7 +59,7 @@ export function Navigation() {
           <Image
             src="/images/klc-logo.png"
             alt="Kingdom Leadership Collective"
-            width={763}
+            width={820}
             height={200}
             priority
             className={cn(
@@ -71,7 +71,7 @@ export function Navigation() {
           <Image
             src="/images/klc-logo-ink.png"
             alt="Kingdom Leadership Collective"
-            width={763}
+            width={820}
             height={200}
             priority
             className={cn(
